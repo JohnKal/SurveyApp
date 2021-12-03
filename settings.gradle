@@ -1,0 +1,5 @@
+rootProject.name = "SurveyApp"
+include ':app'
+include ':data'
+include ':network'
+include ':storage'

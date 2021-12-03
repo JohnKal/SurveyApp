@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TITLE"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_thirty"
+            android:textStyle="bold"
+            android:paddingStart="@dimen/global_margin_fifteen"
+            android:paddingEnd="@dimen/global_margin_fifteen"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/submitedAnswerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ANSWER"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_forty"
+            android:textStyle="bold"
+            android:paddingStart="@dimen/global_margin_fifteen"
+            android:paddingEnd="@dimen/global_margin_fifteen"
+            android:layout_marginTop="@dimen/global_margin_twenty"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/questionText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editAnswerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/questionText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" >
+
+            <EditText
+                android:id="@+id/editAnswerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:hint="Answer" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submitAnswerButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:layout_marginTop="@dimen/global_margin_twenty"
+            android:enabled="false"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAnswerLayout"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
