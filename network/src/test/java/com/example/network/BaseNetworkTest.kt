@@ -7,6 +7,7 @@ import org.junit.After
 import org.junit.Before
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 abstract class BaseNetworkTest {
 
@@ -27,6 +28,9 @@ abstract class BaseNetworkTest {
 
         val okHttpClient = OkHttpClient
             .Builder()
+            .connectTimeout(25, TimeUnit.SECONDS)
+            .readTimeout(25, TimeUnit.SECONDS)
+            .writeTimeout(25, TimeUnit.SECONDS)
             .build()
 
         service = Retrofit.Builder()

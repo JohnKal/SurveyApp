@@ -55,7 +55,8 @@ class SurveyListAdapter @AssistedInject constructor(@ActivityContext val context
                 submitAnswerButton.isEnabled = it?.length != 0
             }
 
-            submitAnswerButton.isEnabled = questionModel.isButtonEnabled && !answerMemory.isNullOrEmpty()
+            submitAnswerButton.isEnabled = questionModel.isButtonEnabled && answerMemory.isNullOrEmpty()
+                    && answerEditText.text.isNotEmpty()
 
             submitAnswerButton.setOnClickListener {
                 answerButtonClickAction(questionModel.id ?: "", answerEditText.text.toString())

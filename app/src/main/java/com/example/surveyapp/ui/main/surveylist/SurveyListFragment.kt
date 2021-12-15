@@ -125,14 +125,14 @@ class SurveyListFragment : Fragment() {
                 showResultArea(show = true, isSuccess = true)
                 showQuestions(true)
 
+                //Store the answer to memory
+                viewModel.storeAnswer(selectedId, selectedAnswer)
+
                 val position = binding.questionsViewPager.currentItem
                 surveyListAdapter.updateButtonState(
                     isEnabled = false,
                     answer = selectedAnswer,
                     position = position)
-
-                //Store the answer to memory
-                viewModel.storeAnswer(selectedId, selectedAnswer)
             }
             is SubmitAnswerState.Error -> {
                 initializeSurveyListAdapter()

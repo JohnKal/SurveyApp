@@ -54,7 +54,7 @@ class QuestionsApiTest : BaseNetworkTest() {
     }
 
     @Test
-    fun `given mock response with 400 error code verify that API questions call response is not null or empty list`() {
+    fun `given mock response with 400 error code verify that API questions call response is null or empty list`() {
 
         server.enqueue(
             MockResponse()

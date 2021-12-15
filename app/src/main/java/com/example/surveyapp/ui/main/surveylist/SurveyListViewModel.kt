@@ -54,7 +54,7 @@ class SurveyListViewModel @Inject constructor(
 
     fun submitQuestion(id: String, answer: String) {
         viewModelScope.launch {
-            questionsListState.value = QuestionsListState.Loading
+            submitAnswerState.value = SubmitAnswerState.Loading
 
             val submitAnswerResponse = dataRepository.submitAnswer(id, answer)
 
